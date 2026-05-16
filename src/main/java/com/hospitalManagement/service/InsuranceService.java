@@ -23,4 +23,10 @@ public class InsuranceService {
         insurance.setPatient(patient); //to maintain bidirectional consistency.
         return patient;
     }
+    @Transactional
+    public Patient disAllocateInsuranceFromPatient(Long patientId){
+        Patient patient=patientRepository.findById(patientId).orElseThrow(()->new EntityNotFoundException("Patient not found with ID"+patientId));
+        patient.setInsurance(null);
+        return patient;
+    }
 }
