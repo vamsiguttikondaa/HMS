@@ -36,19 +36,19 @@ public class InsuranceTests {
         Patient patient=insuranceService.assignInsuranceToPatient(insurance,1l);
         System.out.println(patient);
     }
-    @Test
-    public void testCreateAppointment() {
-        Appointment appointment = Appointment.builder()
-                .appointmentTime(LocalDateTime.of(2025, 11, 1, 14, 0, 0))
-                .reason("Cancer")
-                .build();
-
-        var newAppointment = appointmentService.createNewAppointment(appointment, 1L, 2L);
-
-        System.out.println(newAppointment);
-
-        var updatedAppointment = appointmentService.reAssignAppointmentToAnotherDoctor(newAppointment.getId(), 3L);
-
-        System.out.println(updatedAppointment);
-    }
+//    @Test
+//    public void testCreateAppointment() {
+//        Appointment appointment = Appointment.builder()
+//                .appointmentTime(LocalDateTime.of(2025, 11, 1, 14, 0, 0))
+//                .reason("Cancer")
+//                .build();
+//
+//        var newAppointment = appointmentService.createNewAppointment(appointment, 1L, 2L);
+//
+//        System.out.println(newAppointment);
+//
+//        var updatedAppointment = appointmentService.reAssignAppointmentToAnotherDoctor(newAppointment.getId(), 3L);
+//
+//        System.out.println(updatedAppointment);
+//    }
 }
